@@ -1,0 +1,317 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  font-size: 100%;
+}
+/* responsive neavbar */
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  min-height: 8vh;
+  background-color: #663b39;
+  font-family: "Poppins", sans-serif;
+}
+
+/* sticky nav */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
+.logo {
+  color: #ebe7e1;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 20px;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  width: 30%;
+  justify-content: space-around;
+}
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  color: #ebe7e1;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+a:hover {
+  color: #eacac9;
+}
+
+.burger {
+  display: none;
+}
+
+.burger div {
+  width: 25px;
+  height: 2px;
+  background-color: #ebe7e1;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 1024px) {
+  .nav-links {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .nav-links {
+    position: absolute;
+    right: 0px;
+    height: 92vh;
+    top: 8vh;
+    background-color: #663b39;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+  .nav-links li {
+    opacity: 0;
+  }
+  .burger {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+.nav-active {
+  transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-4px, 6px);
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  transform: rotate(45deg) translate(-4px, -6px);
+}
+
+/* center intro content */
+.introduction {
+  height: 100vh;
+  background-color: #eacac9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.introduction h1 {
+  color: black;
+  font-size: 60px;
+}
+/* projects section */
+.projects {
+  background-color: #b36764;
+  color: black;
+  font-size: 20px;
+  padding: 100px;
+  height: 100vh;
+}
+
+hr {
+  border: 1px solid black;
+  width: 65%;
+  margin: auto;
+}
+
+.project-info,
+.current {
+  font-size: 20px;
+  color: black;
+  text-align: center;
+  margin: auto;
+  padding: 15px;
+}
+
+img {
+  width: 350px;
+  height: 350px;
+  max-width: 100%;
+  height: auto;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  padding: 80px;
+}
+
+.column {
+  flex: 25%;
+  padding: 5px;
+  margin: auto;
+  text-align: center;
+}
+
+.projects h2 {
+  font-size: 36px;
+  text-align: center;
+}
+
+/* image responsiveness */
+@media screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+  }
+}
+
+/* experience section */
+
+.experience {
+  background-color: #665858;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+}
+
+.experience h2 {
+  font-size: 36px;
+  padding-top: 100px;
+  padding-bottom: 40px;
+}
+
+ul {
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* contact / footer */
+.contact {
+  background-color: #663b39;
+  color: #ebe7e1;
+  text-align: center;
+  height: 20vh;
+  padding-top: 100px;
+}
+
+.contact h2 {
+  font-size: 20px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  padding-bottom: 15px;
+}
+
+.contact p {
+  font-size: 20px;
+}
+
+.contact a {
+  text-decoration: none;
+  color: #ebe7e1;
+}
+
+.contact a:hover {
+  color: #b36764;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* media queries tablet landscape */
+@media screen and (max-width: 1060px) {
+  #primary {
+    width: 67%;
+  }
+  #secondary {
+    width: 30%;
+    margin-left: 3%;
+  }
+}
+
+/* media queries tablet portrait */
+@media screen and (max-width: 768px) {
+  #primary {
+    width: 100%;
+  }
+  #secondary {
+    width: 100%;
+    margin: 0;
+    border: none;
+  }
+}
+
+@media (min-device-width: 600px) {
+  img[data-src-600px] {
+    content: attr(data-src-600px, url);
+  }
+}
+
+@media (min-device-width: 800px) {
+  img[data-src-800px] {
+    content: attr(data-src-800px, url);
+  }
+}
+
+@media (min-width: 640px) {
+  body {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 960px) {
+  body {
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 1100px) {
+  body {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .projects {
+    padding: 40px;
+  }
+}
